@@ -1,0 +1,3 @@
+{% autoescape off %}
+您已验证您的电子邮件{{email}}，您可以用您的电子邮件登录网站。
+{% endautoescape %}

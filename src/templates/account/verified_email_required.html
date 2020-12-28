@@ -1,0 +1,11 @@
+{% extends "account/auth_base.html" %}
+
+{% block head_title %}{{ block.super }} - 验证你的邮件地址{% endblock %}
+
+{% block content %}
+    <h3 class="text-center font-weight-bold mt-5">验证你的邮件地址</h3>
+    {% url 'account_email' as email_url %}
+    <p>我们需要验证你就是本人。为此，我们要求您验证电子邮件地址的所有权。</p>
+    <p>我们已经向您发送了一封电子邮件请求验证。请点击此电子邮件中的链接。如果未收到，请与我们联系</p>
+    <p><strong style="color: red;">提醒：</strong>您可以更改您的电子邮件地址。<a href="{{ email_url }}"></a></p>
+{% endblock content %}

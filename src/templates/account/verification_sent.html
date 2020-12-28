@@ -1,0 +1,9 @@
+{% extends "account/auth_base.html" %}
+
+{% block head_title %}{{ block.super }} - 验证您的电子邮箱{% endblock %}
+
+{% block content %}
+    <h3 class="text-center font-weight-bold mt-5">验证您的电子邮箱</h3>
+    <p>带有确认链接的消息已经发送到你的邮箱。请检查您的电子邮件，并打开该链接来激活你的帐号。</p>
+    <p>如果您未收到验证电子邮件，请确认您的电子邮件地址是否正确，或请联系我们。</p>
+{% endblock content %}

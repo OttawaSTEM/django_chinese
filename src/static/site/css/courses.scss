@@ -1,0 +1,43 @@
+.card-course {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    text-align: left;
+    line-height: 150%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    height: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 30px;
+}
+
+.card-course:hover {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 15px 30px;
+    transform: translate3d(0px, -1px, 0px);
+    height: auto;
+}
+
+.card-course .card-course-image {
+    width: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+.card-course .card-course-title {
+    margin-bottom: 10px;
+    font-weight: bold; 
+    font-size: 1.6em;
+    line-height: 100%;
+}
+
+.card-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    text-align: left;
+    line-height: 150%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 30px;
+}

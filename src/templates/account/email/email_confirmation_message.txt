@@ -1,0 +1,10 @@
+{% load account %}
+{% user_display user as user_display %}
+{% autoescape off %}
+您好，
+您收到此电子邮件的原因是用户“{{ user_display }}”已将您的电子邮件地址注册“{{ current_site.name }}”帐户。
+若此确认是正确的，请点击此链接激活您的账户。{{ activate_url }}。
+
+谢谢，
+{{ current_site.domain }}
+{% endautoescape %}

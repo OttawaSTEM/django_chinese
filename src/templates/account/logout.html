@@ -1,0 +1,15 @@
+{% extends "account/auth_base.html" %}
+{% block head_title %}{{ block.super }} - 退出{% endblock head_title %}
+
+{% block content %}
+    <h3 class="text-center font-weight-bold mt-5">退出</h3>
+    <p>您确定要退出？</p>
+
+    <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button type="submit">退出</button>
+    </form>
+{% endblock content%}

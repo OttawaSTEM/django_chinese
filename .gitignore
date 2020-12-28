@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files / Virtual Environment
+__pycache__/
+*.py[cod]
+venv/
+
+# SQLite3 database files:
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs:
+*.log
+logs/
+
+# Environment variables
+local.env
+
+# Django stuff:
+media/
+*.mo
+*.pot
+CACHE/
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+
+# Mac
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Project media files
+local/
+
+# Bootstrap & Admin
+bootstrap/
+
+# Microsoft VSCode
+.vscode/

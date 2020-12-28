@@ -1,0 +1,61 @@
+{% extends "account/auth_base.html" %}
+{% load crispy_forms_tags %}
+{% load account socialaccount %}
+{% load compress %}
+
+{% block head_title %}{{ block.super }} - 登录{% endblock head_title %}
+
+{% block extra_head_script %}
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+{% endblock extra_head_script %}
+
+{% block content %}
+    <h3 class="text-center font-weight-bold">登录</h3>
+    {% include "socialaccount/snippets/login_extra.html" %}
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form | crispy }}
+
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <br>
+        <button class="btn btn-primary mb-3" type="submit">登录</button>
+    </form>
+    <br>
+    <div>
+        <a href="{% url 'account_reset_password' %}">忘记密码？</a>
+        <br>
+        <span class="mr-1">还没有账户？</span><a href="{{ signup_url }}">注册</a>
+    </div>
+    {% comment %} 
+        <br>
+        <hr class="my-4">
+        {% get_providers as socialaccount_providers %}
+        {% if socialaccount_providers %}
+            <div class="list-group">
+                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+            </div>
+            {% include "socialaccount/snippets/login_extra.html" %}
+        {% else %}
+            <p>
+                还没有账户？<a href="{{ signup_url }}">注册</a>
+            </p>
+        {% endif %}
+    {% endcomment %}
+{% endblock content%}
+
+{% block scripts %}
+    {% compress js %}
+        <script>
+            $(document).ready(function() {
+                $('.captcha').click(function () {
+                    $.getJSON("/captcha/refresh/", function (result) {
+                        $('.captcha').attr('src', result['image_url']);
+                        $('#id_captcha_0').val(result['key'])
+                    });
+                });
+            });
+        </script>
+    {% endcompress %}
+{% endblock scripts %}

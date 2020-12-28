@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}{{ block.super }} - 个人资料{% endblock head_title %}
+
+{% block navbar_left %}
+    {% include "_navbar.html" with active_link="" %}
+{% endblock navbar_left %}
+
+{% block extra_head_script %}
+{% endblock extra_head_script %}
+
+{% block container %}
+    <div class="container profile-head">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row ml-1">
+                    {% if show_user.profile.picture %}
+                        <img title="profile picture" src="{{ MEDIA_URL}}{{ show_user.profile.picture }}" alt="avatar" height="80" width="80" style="margin-right: 15px;">
+                    {% else %}
+                        <img title="profile picture" src="{% static '/site/img/profile_default.png' %}" alt="avatar" height="80" width="80" style="margin-right: 15px;">
+                    {% endif%}
+                    {% comment %} <h5 class="mt-4">{{ show_user.get_full_name }}</h5> {% endcomment %}
+                    <h5 class="mt-4" style="font-size: 1.5rem;"><strong>{{ show_user.get_username }}</strong></h5>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                {% if editable %}
+                    <a href="{% url 'profiles:edit_self' %}" class="btn btn-primary float-right mr-3 mt-3">编辑个人资料</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item bg-secondary" style="color: white; font-weight: bold; font-size: 1.1rem">个人资料</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>电子邮箱: </strong></span> {{ show_user.email|default:"missing" }}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>注册时间: </strong></span> {{ show_user.date_joined }}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>最近登录时间: </strong></span> {{ show_user.last_login }}</li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" style="font-size: 1.1rem"><strong>{{ show_user.get_username }} - 个人信息</strong></div>
+                    <div class="card-body" style="height: 145px;">
+                        <strong>个人简介: </strong>{{ show_user.profile.bio }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}
+

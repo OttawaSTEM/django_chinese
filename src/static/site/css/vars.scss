@@ -1,0 +1,36 @@
+$font-family: Arial, Tahoma, Helvetica, "Noto Sans SC Sliced", sans-serif;
+$monospace-fonts: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+    monospace;
+
+$gray_900: #212529;
+$gray_800: #343a40;
+$gray_700: #495057;
+$gray_600: #6c757d;
+$gray_500: #adb5bd;
+$gray_400: #ced4da;
+$gray_300: #dee2e6;
+$gray_200: #e9ecef;
+$gray_100: #f8f9fa;
+
+$light_blue: #26b3fb;
+$highlight_blue: #008ffc;
+$border_gray: #ccc;
+$background_gray: #ededed;
+$background_light_gray: $gray_100;
+$announcement_red: #ae0000;
+$table_header: $gray_800;
+$transparent_100: rgba(0, 0, 0, 1);
+$transparent_75: rgba(0, 0, 0, 0.75);
+$transparent_50: rgba(0, 0, 0, 0.5);
+$transparent_25: rgba(0, 0, 0, 0.25);
+$transparent_0: rgba(0, 0, 0, 0);
+
+$base_font_size: 14px;
+$widget_border_radius: 4px;
+$table_header_rounding: 6px;
+
+$navbar_color: white;
+$navbar_background_color: $light_blue;
+$navbar_dropdown_background_color: $gray_800;
+
